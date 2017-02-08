@@ -1,1 +1,150 @@
-1233
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>张凡作品</title>
+	<style>
+		input,textarea,a{outline:none;}
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{padding:0;margin:0;}
+		body,textarea,select,input,pre{font-family:arial,microsoft yahei,helvetica,sans-serif;font-size:14px;color:#555;}
+		a{text-decoration:none;}
+		li{list-style:none;}
+		.clearfix:after{
+			display: block;
+			content: "";
+			height: 0;
+			clear: both;
+			visibility: hidden;
+		}
+		html,body{height: 100%;}
+		body{
+			background: #e8e8e8;
+			position: relative;
+		}
+		header{
+			background: rgba(0,0,0,1);
+			width: 100%;height: 100px;
+		}
+		main{
+			height: calc(100% - 100px);
+			overflow: auto;
+ 		}
+		.container{
+			max-width: 1280px;
+			width: 100%;
+			margin: 0 auto;
+		}
+		.titles{
+			padding: 20px 0;
+		}
+		.titles li{
+			float: left;
+			width: 25%;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+		}
+		.titles li{color: #5a5a5a;cursor: pointer;}
+		.titles li.active, .titles li:hover{color: #fff;}
+		.work{
+			width: 100%;margin: 30px 0;
+/*			background: #eee;*/
+			box-sizing: border-box;
+			padding: 10px;
+		}
+		.work h1{padding: 30px 0;}
+		.work img{width: 100%;}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<ul class="titles clearfix">
+				<li class="active">项目一：标题标题标题</li>
+				<li>项目二：标题标题标题</li>
+				<li>项目三：标题标题标题</li>
+				<li>项目四：标题标题标题</li>
+				<li>项目五：标题标题标题</li>
+				<li>项目六：标题标题标题</li>
+				<li>项目七：标题标题标题</li>
+				<li>项目八：标题标题标题</li>
+			</ul>
+		</div>
+	</header>
+	<main>
+		<div class="container">
+			<div class="work">
+				<h1>项目一：标题标题标题</h1>
+				<img src="img/test.jpg" alt="">
+				<img src="img/test.jpg" alt="">
+			</div>
+			<div class="work">
+				<h1>项目二：标题标题标题</h1>
+				<img src="img/test.jpg" alt="">
+				<img src="img/test.jpg" alt="">
+			</div>
+			<div class="work">
+				<h1>项目三：标题标题标题</h1>
+				<img src="img/test.jpg" alt="">
+				<img src="img/test.jpg" alt="">
+			</div>
+			<div class="work">
+				<h1>项目四：标题标题标题</h1>
+				<img src="img/test.jpg" alt="">
+				<img src="img/test.jpg" alt="">
+			</div>
+			<div class="work">
+				<h1>项目五：标题标题标题</h1>
+				<img src="img/test.jpg" alt="">
+				<img src="img/test.jpg" alt="">
+			</div>
+			<div class="work">
+				<h1>项目六：标题标题标题</h1>
+				<img src="img/test.jpg" alt="">
+				<img src="img/test.jpg" alt="">
+			</div>
+			<div class="work">
+				<h1>项目七：标题标题标题</h1>
+				<img src="img/test.jpg" alt="">
+				<img src="img/test.jpg" alt="">
+			</div>
+			<div class="work">
+				<h1>项目八：标题标题标题</h1>
+				<img src="img/test.jpg" alt="">
+				<img src="img/test.jpg" alt="">
+			</div>
+		</div>
+	</main>
+	<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+		// (function(){
+			var links = $('.titles li');
+			var works = $('.work');
+			var tops = [];
+			works.each(function(i,el){
+				tops[i] = works.eq(i).offset().top -130;
+			})
+			links.each(function(i,el){
+				$(el).click(function(){
+					$('main').animate({
+						scrollTop: tops[i]
+					},200);
+					$(el).addClass('active').siblings().removeClass('active');
+				});
+			});
+			$('main').scroll(function(){
+				var top = $('main').scrollTop();
+				$(tops).each(function(i,el){
+					console.log(top);
+					if(top>=tops[i] - 200){
+						links.eq(i).addClass('active').siblings().removeClass('active');
+						return;
+					}
+				});
+			});
+		// })();
+	</script>
+</body>
+</html>
