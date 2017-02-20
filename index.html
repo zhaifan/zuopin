@@ -49,7 +49,7 @@
 		.titles li{color: rgba(130,130,130,1);cursor: pointer;}
 		.titles li.active, .titles li:hover{color: #fff;}
 		.work{
-			width: 100%;margin: 30px 0;
+			width: 100%;margin: 15px 0;
 /*			background: #eee;*/
 			box-sizing: border-box;
 			padding: 10px;
@@ -123,7 +123,7 @@
 			var works = $('.work');
 			var tops = [];
 			works.each(function(i,el){
-				tops[i] = works.eq(i).offset().top -130;
+				tops[i] = works.eq(i).offset().top -80;
 			})
 			links.each(function(i,el){
 				$(el).click(function(){
