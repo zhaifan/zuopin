@@ -48,6 +48,7 @@
 		}
 		.titles li{color: rgba(130,130,130,1);cursor: pointer;}
 		.titles li.active, .titles li:hover{color: #fff;}
+		.titles li.active, .titles li:hover{color: #fff;}
 		.work{
 			width: 100%;margin: 15px 0;
 /*			background: #eee;*/
@@ -56,6 +57,7 @@
 		}
 		.work h1{padding: 30px 0;color: #A90101}
 		.work img{width: 100%;}
+		.work p {font-size: 16px;color: #777;margin: 0 0 20px 0;}
 	</style>
 </head>
 <body>
@@ -76,41 +78,66 @@
 		<div class="container">
 			<div class="work">
 				<h1>项目一：如e行-汽车租赁<a href="https://itunes.apple.com/cn/app/%E5%A6%82e%E8%A1%8C/id1114745327?l=en&mt=8" target="_blank">（查看下载地址）</a></h1>
+				<p>1.业务核心：为政府等机构的公务出行用车，提供便捷的租赁服务<br/>
+				2.目标用户：政府或企业等机构、公务用车的人群<br/>
+				3.主要诉求：功能和操作要简洁明了，界面大方美观</p>
 				<img src="img/1如e行.png" alt="">
 <!--				<img src="img/test.jpg" alt="">-->
 			</div>
 			<div class="work">
 				<h1>项目二：康迪出行-汽车智控</h1>
+				<p>1.业务核心：为康迪的汽车提供相应的远程智能化服务<br/>
+                   2.目标用户：康迪汽车用户<br/>
+                   3.主要诉求：重点功能的流程要清晰顺畅，界面要美化
+</p>
 				<img src="img/2康迪出行.png" alt="">
 <!--				<img src="img/test.jpg" alt="">-->
 			</div>
 			<div class="work">
 				<h1>项目三：ET-电动滑板车<a href="http://www.electisan.com" target="_blank">（查看网站）</a></h1>
+				<p>1.业务核心：介绍和销售ET电动滑板车<br/>
+                   2.目标用户：城市年轻群体<br/>
+                   3.主要诉求：介绍产品引起用户购买欲，提升品牌认可度和影响力</p>
 				<img src="img/3ET电匠科技.png" alt="">
 <!--				<img src="img/test.jpg" alt="">-->
 			</div>
 			<div class="work">
 				<h1>项目四：Belloc-软装设计网站</h1>
+				<p>1.业务核心：提供软装的方案设计、报价参考、家具购买等<br/>
+                   2.目标用户：中高端家装人群<br/>
+                   3.主要诉求：突出网站用户可以自由设计软装方案，并要求改功能操作简单便捷</p>
 				<img src="img/4Belloc软装网站提案.jpg" alt="">
 <!--				<img src="img/test.jpg" alt="">-->
 			</div>
 			<div class="work">
 				<h1>项目五：<a href="http://www.ewoho.com" target="_blank">易户网、</a><a href="http://www.eqoho.com" target="_blank">易企网</a> 改版</h1>
+				<p>1.业务核心：为市民和企业提供便捷的政府办事服务的平台<br/>
+                   2.目标用户：易户网-普通市民，易企网-中小型企业<br/>
+                   3.主要诉求：改版网站首页信息布局，结构清晰且突出重点，优化核心的功能流程等</p>
 				<img src="img/5易户网易企网改版.jpg" alt="">
 <!--				<img src="img/test.jpg" alt="">-->
 			</div>
 			<div class="work">
 				<h1>项目六：嘉善档案馆藏系统</h1>
+				<p>1.业务核心：帮助民众查阅档案，帮助档案机构管理查询记录<br/>
+                   2.目标用户：档案管理局等政府机构、档案管理员<br/>
+                   3.主要诉求：优化操作流程，提高执行效率，美化UI界面</p>
 				<img src="img/6馆藏系统.png" alt="">
 <!--				<img src="img/test.jpg" alt="">-->
 			</div>
 			<div class="work">
 				<h1>项目七：数据质量检测系统</h1>
+				<p>1.业务核心：对数据文件做定向指标的检测、查错、记录等<br/>
+                   2.目标用户：有数据质检需求的公司、数据管理人员<br/>
+                   3.主要诉求：优化操作流程，提高执行效率，美化UI界面</p>
 				<img src="img/7数据检测系统.png" alt="">
 <!--				<img src="img/test.jpg" alt="">-->
 			</div>
 			<div class="work">
 				<h1>项目八：三汇情报管理系统</h1>
+				<p>1.业务核心：收集和处理各种情报信息、文件、档案等<br/>
+                   2.目标用户：公安机关等部门、管理人员<br/>
+                   3.主要诉求：优化信息展示，提高执行效率，考虑拓展性，并提供多种导航方案</p>
 				<img src="img/8三汇情报系统1.png" alt="">
 				<img src="img/8三汇情报系统2.png" alt="">
 				<img src="img/8三汇情报系统3.png" alt="">
@@ -125,8 +152,8 @@
 			var works = $('.work');
 			var tops = [];
 			works.each(function(i,el){
-				tops[i] = works.eq(i).offset().top -80;
-			})
+				tops[i] = works.eq(i).offset().top-80;
+			});
 			links.each(function(i,el){
 				$(el).click(function(){
 					$('main').animate({
@@ -142,7 +169,7 @@
 					if(top>=tops[i] - 200){
 						links.eq(i).addClass('active').siblings().removeClass('active');
 						return;
-					}
+					};
 				});
 			});
 		// })();
